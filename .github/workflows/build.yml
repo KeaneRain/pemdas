@@ -1,0 +1,12 @@
+name: build
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: g++ -std=c++11 -Wall -Wextra pemdas_calculator.cpp -o pemdas_calculator
+      - name: Smoke test
+        run: |
+          printf '2+3*4\nn\n' | ./pemdas_calculator | grep "Result:  14.0000"
+          printf '2^3^2\nn\n' | ./pemdas_calculator | grep "Result:  512.0000"

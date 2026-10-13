@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run pemdas_calculator",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\pemdas_calculator.exe",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "preLaunchTask": "build pemdas_calculator"
+        }
+    ]
+}
